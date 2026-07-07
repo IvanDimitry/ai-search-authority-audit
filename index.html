@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Search Authority Audit | TrustPress AI</title>
+  <meta name="description" content="A diagnostic audit for B2B teams that need buyers and AI search systems to understand, verify, cite, trust, and remember their expertise. Review your source material, proof, buyer language, LinkedIn trust surface, and authority assets." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://ivandimitry.github.io/ai-search-authority-audit/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Search Authority Audit | TrustPress AI" />
+  <meta property="og:description" content="Find the source material, proof, buyer-language, and authority gaps that stop buyers and AI systems from understanding, citing, trusting, and remembering you." />
+  <meta property="og:url" content="https://ivandimitry.github.io/ai-search-authority-audit/" />
+  <meta property="og:site_name" content="TrustPress AI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Search Authority Audit | TrustPress AI" />
+  <meta name="twitter:description" content="A diagnostic for source material, proof, buyer language, LinkedIn trust surfaces, and AI-search-ready authority systems." />
+
+  <style>
+    :root {
+      --bg: #030812;
+      --panel: #07111f;
+      --panel2: #0b1728;
+      --ink: #f4f8ff;
+      --muted: #a8b6c8;
+      --soft: #6f7f94;
+      --blue: #1683ff;
+      --blue2: #00b7ff;
+      --line: rgba(54, 146, 255, 0.34);
+      --line2: rgba(255, 255, 255, 0.11);
+      --max: 1120px;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(22, 131, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 8%, rgba(0, 183, 255, 0.18), transparent 28%),
+        linear-gradient(180deg, #020712 0%, #030812 46%, #05070b 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 75%);
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(3, 8, 18, .74);
+      border-bottom: 1px solid var(--line2);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 800;
+      color: #dfeaff;
+    }
+    .mark {
+      width: 12px; height: 12px; border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 18px rgba(22, 131, 255, .9);
+    }
+    .nav a.cta-small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      background: rgba(22, 131, 255, .14);
+    }
+    .hero { padding: 86px 0 44px; overflow: hidden; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: #9bd7ff;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 7vw, 84px);
+      line-height: .94;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+    .blue { color: var(--blue); text-shadow: 0 0 26px rgba(22, 131, 255, .28); }
+    .lede {
+      margin: 28px 0 0;
+      font-size: clamp(19px, 2vw, 25px);
+      line-height: 1.35;
+      color: #e9f2ff;
+      max-width: 760px;
+      font-weight: 650;
+    }
+    .lede strong { color: white; }
+    .micro {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 680px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,.14);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      color: #001120;
+      border-color: rgba(255,255,255,.08);
+      box-shadow: 0 18px 45px rgba(22, 131, 255, .28);
+    }
+    .btn-secondary { background: rgba(255,255,255,.055); color: var(--ink); }
+    .hero-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(12, 27, 48, .82), rgba(5, 13, 25, .88));
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(120deg, transparent, rgba(22,131,255,.20), transparent);
+      opacity: .9;
+      pointer-events: none;
+    }
+    .score-label { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .16em; font-weight: 900; }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+      position: relative;
+    }
+    .score div {
+      padding: 14px;
+      border: 1px solid var(--line2);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      min-height: 86px;
+    }
+    .score b { display: block; font-size: 26px; color: white; line-height: 1; }
+    .score span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; }
+    section { padding: 64px 0; }
+    .section-head { max-width: 800px; margin-bottom: 28px; }
+    .kicker { color: #8acfff; font-weight: 900; text-transform: uppercase; letter-spacing: .16em; font-size: 13px; margin-bottom: 12px; }
+    h2 { margin: 0; font-size: clamp(31px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.035em; }
+    .section-head p { color: var(--muted); font-size: 18px; margin: 18px 0 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+      border: 1px solid var(--line2);
+      border-radius: 20px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+    .card h3 { margin: 0 0 10px; font-size: 21px; line-height: 1.22; }
+    .card p, .card li { color: var(--muted); }
+    .card p { margin: 0; }
+    ul.clean { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+    ul.clean li { position: relative; padding-left: 24px; }
+    ul.clean li::before {
+      content: "";
+      width: 8px; height: 8px; border-radius: 99px;
+      background: var(--blue);
+      position: absolute; left: 0; top: .55em;
+      box-shadow: 0 0 15px rgba(22,131,255,.8);
+    }
+    .process { counter-reset: step; display: grid; gap: 14px; }
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--line2);
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+    }
+    .step::before {
+      content: counter(step, decimal-leading-zero);
+      color: var(--blue2);
+      font-size: 20px;
+      font-weight: 1000;
+      letter-spacing: -.04em;
+    }
+    .step h3 { margin: 0 0 4px; font-size: 20px; }
+    .step p { margin: 0; color: var(--muted); }
+    .upload-box {
+      border: 1px solid rgba(0,183,255,.42);
+      border-radius: 26px;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(22, 131, 255, .15), rgba(0, 183, 255, .06)),
+        rgba(255,255,255,.035);
+      box-shadow: var(--shadow);
+    }
+    .upload-box h2 { font-size: clamp(34px, 4.8vw, 58px); }
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .pill {
+      padding: 12px 14px;
+      border: 1px solid var(--line2);
+      border-radius: 999px;
+      color: #e9f3ff;
+      background: rgba(3,8,18,.44);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .price {
+      font-size: clamp(42px, 6vw, 72px);
+      letter-spacing: -.06em;
+      line-height: .95;
+      margin: 10px 0;
+      font-weight: 1000;
+    }
+    .faq details {
+      border: 1px solid var(--line2);
+      border-radius: 16px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,.035);
+      margin-bottom: 12px;
+    }
+    .faq summary { cursor: pointer; font-weight: 900; font-size: 18px; }
+    .faq p { color: var(--muted); margin-bottom: 0; }
+    footer {
+      padding: 36px 0 54px;
+      border-top: 1px solid var(--line2);
+      color: var(--soft);
+      font-size: 14px;
+    }
+    .note { color: var(--soft); font-size: 14px; margin-top: 12px; }
+    @media (max-width: 880px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .hero { padding-top: 56px; }
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      .hero-card { order: -1; }
+      .checklist { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ivandimitry.github.io/ai-search-authority-audit/#webpage",
+        "url": "https://ivandimitry.github.io/ai-search-authority-audit/",
+        "name": "AI Search Authority Audit",
+        "description": "A diagnostic audit for B2B teams that need buyers and AI search systems to understand, verify, cite, trust, and remember their expertise.",
+        "isPartOf": { "@id": "https://ivandimitry.github.io/trustpress-ai/#website" },
+        "about": ["AI search visibility", "authority assets", "source material", "proof architecture", "buyer language", "B2B trust"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ivandimitry.github.io/ai-search-authority-audit/#service",
+        "name": "AI Search Authority Audit",
+        "provider": { "@type": "Organization", "name": "TrustPress AI", "url": "https://ivandimitry.github.io/trustpress-ai/" },
+        "areaServed": "Global",
+        "serviceType": "AI search authority audit and B2B authority system diagnostic",
+        "description": "A diagnostic for source material, proof architecture, buyer-language alignment, LinkedIn trust surfaces, website authority structure, and AI answer quality.",
+        "offers": {
+          "@type": "Offer",
+          "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 1500 },
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ivandimitry.github.io/ai-search-authority-audit/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an AI Search Authority Audit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is a diagnostic audit that reviews whether buyers and AI search systems can understand, verify, cite, trust, and remember a B2B company based on its public authority system, source material, proof, buyer language, LinkedIn presence, and content assets." }
+          },
+          {
+            "@type": "Question",
+            "name": "What do clients need to upload?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Clients should provide their website, LinkedIn profile, company page, newsletter or blog, service pages, case studies, sales deck, pitch deck, lead magnets, testimonials, FAQs, important posts, competitor links, and any internal positioning or sales material they want reviewed." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the audit guarantee AI search rankings?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The audit does not promise guaranteed rankings in AI systems. It identifies the authority, source material, proof, language, and structure gaps that make a company easier or harder for buyers and AI systems to understand and cite accurately." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <div class="brand"><span class="mark" aria-hidden="true"></span> TrustPress AI</div>
+      <a class="cta-small" href="#upload">Start with the source pack</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">AI Search Authority Audit</div>
+          <h1>Content gets published. <span class="blue">Context gets used.</span></h1>
+          <p class="lede">Find the source material, proof, buyer-language, and authority gaps that stop buyers and AI systems from understanding, citing, trusting, and remembering you.</p>
+          <p class="micro">For B2B founders, consultants, expert-led firms, agencies, and teams with real expertise but scattered public proof.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#upload">Request an audit</a>
+            <a class="btn btn-secondary" href="#scorecard">See what gets scored</a>
+          </div>
+          <p class="note">Pilot audits from €1,500. Full scope depends on assets, company complexity, and depth of review.</p>
+        </div>
+        <aside class="hero-card" aria-label="Audit summary card">
+          <div class="score-label">12-point diagnostic</div>
+          <div class="score">
+            <div><b>01</b><span>Source material</span></div>
+            <div><b>02</b><span>Proof architecture</span></div>
+            <div><b>03</b><span>AI answer quality</span></div>
+            <div><b>04</b><span>Authority assets</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">The problem</div>
+          <h2>Most B2B teams do not have a content problem. They have a context problem.</h2>
+          <p>Your expertise is scattered across your website, LinkedIn profile, articles, sales calls, decks, case studies, proposals, and founder thinking. Buyers need clarity. AI systems need usable source material.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>Buyers cannot repeat the value.</h3><p>They understand you only after a call because the public authority system does not explain the problem, proof, offer, and difference clearly enough.</p></div>
+          <div class="card"><h3>AI systems cannot explain you accurately.</h3><p>If your source layer is thin, vague, or scattered, AI answers become generic, incomplete, or competitor-shaped.</p></div>
+          <div class="card"><h3>Your best proof is buried.</h3><p>The material that should earn trust lives in calls, decks, testimonials, founder notes, and internal docs instead of public authority assets.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scorecard">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">What gets audited</div>
+          <h2>The AI Search Authority Scorecard</h2>
+          <p>Each area is scored from 0 to 5, then translated into a practical authority roadmap: what is clear, what is confusing, what is missing, and what should be built next.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>1. Positioning clarity</h3><p>Can a buyer or AI system explain what you do in one clean sentence?</p></div>
+          <div class="card"><h3>2. Category/entity clarity</h3><p>Are you associated with the right category, problems, buyers, and alternatives?</p></div>
+          <div class="card"><h3>3. Source material depth</h3><p>Do you have enough structured, crawlable material for buyers and AI systems to learn from?</p></div>
+          <div class="card"><h3>4. Proof architecture</h3><p>Are your strongest claims supported by visible proof, examples, outcomes, methods, and evidence?</p></div>
+          <div class="card"><h3>5. Buyer-language alignment</h3><p>Do your pages use the language prospects use when they describe the problem?</p></div>
+          <div class="card"><h3>6. Offer clarity</h3><p>Is the first commercial step obvious, specific, and easy to buy?</p></div>
+          <div class="card"><h3>7. Website authority structure</h3><p>Do your homepage, service pages, proof pages, and articles form a connected source layer?</p></div>
+          <div class="card"><h3>8. LinkedIn trust surface</h3><p>Does your profile, featured section, posts, newsletter, and activity support the authority story?</p></div>
+          <div class="card"><h3>9. Newsletter/content memory</h3><p>Does your publishing create repeated market memory or just isolated smart posts?</p></div>
+          <div class="card"><h3>10. AI answer quality</h3><p>What do AI tools say when asked about you, your category, your alternatives, and your credibility?</p></div>
+          <div class="card"><h3>11. Authority asset coverage</h3><p>Which assets are missing: proof page, comparison page, source page, report, founder POV, lead magnet, or authority hub?</p></div>
+          <div class="card"><h3>12. Conversion path clarity</h3><p>Can attention move into a diagnostic, sales conversation, sprint, or implementation path without friction?</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="upload">
+      <div class="wrap">
+        <div class="upload-box">
+          <div class="kicker">Easy source-pack upload</div>
+          <h2>Send the material once. I audit the authority system around it.</h2>
+          <p class="lede">The intake should be light. The source pack should be complete. You do not need to answer 80 questions before the audit starts.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="YOUR_UPLOAD_FORM_URL_HERE">Open intake + upload form</a>
+            <a class="btn btn-secondary" href="mailto:YOUR_EMAIL_HERE?subject=AI%20Search%20Authority%20Audit%20Source%20Pack">Send source pack by email</a>
+          </div>
+          <p class="note">Replace the upload form link with your Google Form, Tally, Fillout, Typeform, or secure client intake form. GitHub Pages is static, so direct file uploads need an external form or storage tool.</p>
+          <div class="checklist" aria-label="Source material checklist">
+            <div class="pill">Website and service pages</div>
+            <div class="pill">LinkedIn profile and company page</div>
+            <div class="pill">Newsletter, blog, or articles</div>
+            <div class="pill">Case studies and testimonials</div>
+            <div class="pill">Sales deck or pitch deck</div>
+            <div class="pill">Lead magnets and reports</div>
+            <div class="pill">FAQs and objection notes</div>
+            <div class="pill">Best posts and founder POVs</div>
+            <div class="pill">Competitor or alternative links</div>
+            <div class="pill">Internal positioning docs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <div class="wrap grid-2">
+        <div>
+          <div class="section-head">
+            <div class="kicker">What you receive</div>
+            <h2>A diagnosis, not a vague content report.</h2>
+            <p>The output is designed to show what should be fixed first and what authority assets should be built next.</p>
+          </div>
+        </div>
+        <div class="card">
+          <ul class="clean">
+            <li>AI Search Authority Scorecard</li>
+            <li>Source material gap map</li>
+            <li>Proof architecture review</li>
+            <li>LinkedIn trust surface review</li>
+            <li>Website and service-page diagnosis</li>
+            <li>AI answer quality notes</li>
+            <li>Authority asset recommendations</li>
+            <li>30-day repair plan</li>
+            <li>90-day authority roadmap</li>
+            <li>Delivery call with next-step recommendation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Methodology</div>
+          <h2>Four layers. One authority system.</h2>
+        </div>
+        <div class="process">
+          <div class="step"><div><h3>What buyers see</h3><p>Website, LinkedIn, service pages, newsletter, case studies, proof, offers, and calls to action.</p></div></div>
+          <div class="step"><div><h3>What AI systems can understand</h3><p>Public source material, entity clarity, category language, structured explanations, and evidence density.</p></div></div>
+          <div class="step"><div><h3>What proof supports your claims</h3><p>Testimonials, case studies, screenshots, examples, methods, outcomes, and operational credibility.</p></div></div>
+          <div class="step"><div><h3>What asset should be built next</h3><p>Authority page, proof page, comparison page, founder POV, report, newsletter system, lead magnet, or service-page rebuild.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="wrap grid-2">
+        <div class="card">
+          <h2>Good fit</h2>
+          <ul class="clean">
+            <li>B2B founders with strong expertise but scattered public proof</li>
+            <li>Consultants and expert-led firms building market authority</li>
+            <li>Agencies that need clearer positioning, proof, and source material</li>
+            <li>SaaS or service teams preparing for AI-search visibility</li>
+            <li>Teams that want an audit before building more content</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Bad fit</h2>
+          <ul class="clean">
+            <li>Teams looking for guaranteed AI ranking tricks</li>
+            <li>Companies that only want cheap content production</li>
+            <li>Businesses with no real offer, proof, or expertise to structure</li>
+            <li>People who want generic SEO tips instead of authority diagnosis</li>
+            <li>Teams unwilling to provide source material for review</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap grid-2">
+        <div class="section-head">
+          <div class="kicker">Pilot package</div>
+          <h2>Start with the audit. Build after the diagnosis.</h2>
+          <p>Most clients should not start with a full content system. They should first identify the authority gaps weakening buyer trust and AI search readiness.</p>
+        </div>
+        <div class="card">
+          <h3>AI Search Authority Audit</h3>
+          <div class="price">From €1,500</div>
+          <p>7–10 working days for focused audits. Larger teams, complex sites, multiple executives, or deeper AI/search testing may require a custom scope.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#upload">Request audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">FAQ</div>
+          <h2>Plain answers before the call.</h2>
+        </div>
+        <details>
+          <summary>Is this a GEO or SEO audit?</summary>
+          <p>It includes AI search and SEO-adjacent signals, but it is not a traditional keyword or technical SEO audit. The focus is authority readiness: source material, proof, buyer language, trust surfaces, and whether AI systems can understand and cite the company accurately.</p>
+        </details>
+        <details>
+          <summary>Do you guarantee AI search rankings?</summary>
+          <p>No. The audit does not promise guaranteed rankings or citations. It identifies what makes your authority system easier or harder for buyers and AI systems to understand, verify, cite, trust, and remember.</p>
+        </details>
+        <details>
+          <summary>How much do clients need to upload?</summary>
+          <p>Enough to show the real authority system: website links, LinkedIn profiles, service pages, case studies, sales decks, testimonials, lead magnets, reports, newsletters, and any internal positioning or sales material worth reviewing.</p>
+        </details>
+        <details>
+          <summary>What happens after the audit?</summary>
+          <p>The audit recommends the next highest-leverage asset or system fix. That may be a proof page, source page, authority asset, LinkedIn trust surface rebuild, newsletter system, service-page rewrite, or broader authority operations sprint.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="final-cta">
+      <div class="wrap upload-box">
+        <div class="kicker">Start here</div>
+        <h2>Show me the source material. I’ll show you the authority gaps.</h2>
+        <p class="lede">Send your website, LinkedIn profile, newsletter, proof assets, sales material, and the problem you want to be trusted for.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="YOUR_UPLOAD_FORM_URL_HERE">Open intake + upload form</a>
+          <a class="btn btn-secondary" href="mailto:YOUR_EMAIL_HERE?subject=AI%20Search%20Authority%20Audit%20Inquiry">Email inquiry</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>TrustPress AI</strong> — Authority systems for B2B teams that need to be understood, verified, cited, trusted, and remembered.
+    </div>
+  </footer>
+</body>
+</html>
