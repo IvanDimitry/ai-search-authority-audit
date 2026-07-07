@@ -10,7 +10,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI Search Authority Audit">
-  <meta property="og:description" content="Find the source material, proof, buyer-language, and authority gaps that stop buyers and AI systems from trusting you.">
+  <meta property="og:description" content="Find out why buyers and AI systems do not fully trust, cite, or remember you — and what to fix first.">
   <meta property="og:url" content="https://ivandimitry.github.io/ai-search-authority-audit/">
   <meta property="og:site_name" content="TrustPress AI">
 
@@ -30,13 +30,15 @@
       --blue: #3ea7ff;
       --blue-2: #77c8ff;
       --line: rgba(255,255,255,0.14);
-      --danger: #ffcc66;
+      --warning: #ffcc66;
+      --green: #7df0ba;
       --max: 1120px;
       --radius: 22px;
       --shadow: 0 28px 90px rgba(0,0,0,.36);
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -44,8 +46,8 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 20% 10%, rgba(62,167,255,.20), transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(119,200,255,.14), transparent 27%),
+        radial-gradient(circle at 16% 8%, rgba(62,167,255,.21), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(119,200,255,.13), transparent 31%),
         linear-gradient(180deg, #050a14 0%, var(--bg) 42%, #050a14 100%);
       line-height: 1.55;
     }
@@ -78,7 +80,7 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links {
@@ -99,7 +101,9 @@
       border-bottom-color: var(--blue);
     }
 
-    .hero { padding: 72px 0 58px; }
+    .hero {
+      padding: 70px 0 46px;
+    }
 
     .eyebrow {
       display: inline-flex;
@@ -111,7 +115,7 @@
       color: var(--blue-2);
       background: rgba(62,167,255,.08);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
@@ -126,20 +130,23 @@
 
     h1 {
       margin: 24px 0 18px;
-      font-size: clamp(43px, 7vw, 84px);
+      font-size: clamp(42px, 7vw, 86px);
       line-height: .96;
-      letter-spacing: -0.065em;
-      max-width: 980px;
+      letter-spacing: -0.066em;
+      max-width: 1000px;
     }
 
     .hero-sub {
-      max-width: 760px;
+      max-width: 820px;
       font-size: clamp(19px, 2.15vw, 25px);
       color: var(--muted);
-      margin: 0 0 30px;
+      margin: 0 0 28px;
     }
 
-    .hero-sub strong { color: var(--text); font-weight: 760; }
+    .hero-sub strong {
+      color: var(--text);
+      font-weight: 780;
+    }
 
     .cta-row {
       display: flex;
@@ -156,7 +163,7 @@
       min-height: 48px;
       padding: 14px 20px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 850;
       text-decoration: none;
       border: 1px solid var(--line);
       transition: transform .16s ease, background .16s ease, border-color .16s ease;
@@ -171,43 +178,45 @@
       box-shadow: 0 12px 38px rgba(62,167,255,.28);
     }
 
-    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
 
-    .note {
-      margin-top: 18px;
+    .micro-note {
+      margin-top: 16px;
       color: var(--soft);
       font-size: 14px;
-      max-width: 740px;
+      max-width: 760px;
     }
 
-    .warning {
-      margin-top: 28px;
-      max-width: 870px;
-      border: 1px solid rgba(255,204,102,.35);
-      background: rgba(255,204,102,.07);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      color: #f7e4bb;
-    }
-
-    section { padding: 54px 0; }
+    section { padding: 50px 0; }
 
     .section-title {
       font-size: clamp(30px, 4vw, 48px);
       line-height: 1.02;
-      letter-spacing: -0.045em;
+      letter-spacing: -0.048em;
       margin: 0 0 16px;
     }
 
     .section-lead {
       color: var(--muted);
       font-size: 19px;
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 0 26px;
     }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
 
     .card {
       border: 1px solid var(--line);
@@ -217,16 +226,34 @@
       box-shadow: 0 16px 50px rgba(0,0,0,.18);
     }
 
-    .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -0.02em; }
-    .card p, .card li { color: var(--muted); }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
     .card p { margin: 0; }
-    .card ul, .panel ul { margin: 14px 0 0; padding-left: 20px; }
-    .card li, .panel li { margin: 8px 0; }
+
+    .card ul,
+    .panel ul {
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+    .card li,
+    .panel li {
+      margin: 8px 0;
+    }
 
     .number {
       display: inline-flex;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       align-items: center;
       justify-content: center;
       border-radius: 999px;
@@ -244,7 +271,55 @@
       box-shadow: var(--shadow);
     }
 
-    .score-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 18px; margin-top: 20px; }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .step {
+      position: relative;
+      min-height: 122px;
+      border: 1px solid rgba(119,200,255,.22);
+      background: rgba(62,167,255,.075);
+      border-radius: 18px;
+      padding: 16px 14px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      width: 26px;
+      height: 26px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      box-shadow: 0 0 22px rgba(62,167,255,.32);
+    }
+
+    .score-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 18px;
+      margin-top: 20px;
+    }
 
     .score-item {
       display: flex;
@@ -255,19 +330,18 @@
       padding: 10px 0;
     }
 
-    .check { color: var(--blue-2); font-weight: 900; flex: 0 0 auto; }
-
-    .price {
-      font-size: 48px;
-      line-height: 1;
-      letter-spacing: -0.06em;
-      margin: 4px 0 8px;
+    .check {
+      color: var(--blue-2);
       font-weight: 900;
+      flex: 0 0 auto;
     }
 
-    .price small { font-size: 16px; letter-spacing: 0; color: var(--muted); font-weight: 650; }
-
-    .split { display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; align-items: start; }
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 20px;
+      align-items: start;
+    }
 
     .pill {
       display: inline-flex;
@@ -277,8 +351,64 @@
       border: 1px solid rgba(62,167,255,.24);
       color: var(--blue-2);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 850;
       margin-bottom: 12px;
+    }
+
+    .finding {
+      border: 1px solid rgba(125,240,186,.28);
+      background:
+        radial-gradient(circle at top right, rgba(125,240,186,.12), transparent 26%),
+        rgba(255,255,255,.045);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .finding-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .finding-row:last-child { border-bottom: none; }
+
+    .finding-label {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: .06em;
+    }
+
+    .finding-text {
+      color: var(--muted);
+    }
+
+    .price {
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 4px 0 8px;
+      font-weight: 920;
+    }
+
+    .price small {
+      font-size: 16px;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .notice {
+      margin-top: 20px;
+      border: 1px solid rgba(255,204,102,.35);
+      background: rgba(255,204,102,.07);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      color: #f7e4bb;
     }
 
     details {
@@ -289,8 +419,16 @@
       margin: 10px 0;
     }
 
-    summary { cursor: pointer; font-weight: 800; color: var(--text); }
-    details p { color: var(--muted); margin: 12px 0 0; }
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: var(--text);
+    }
+
+    details p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
 
     footer {
       padding: 44px 0 64px;
@@ -300,17 +438,59 @@
       font-size: 14px;
     }
 
-    .footer-grid { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     .muted { color: var(--muted); }
     .accent { color: var(--blue-2); }
 
+    @media (max-width: 1020px) {
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 880px) {
-      .grid, .grid-2, .split, .score-list { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav-links { flex-wrap: wrap; }
-      .hero { padding-top: 42px; }
-      .wrap { width: min(var(--max), calc(100% - 28px)); }
-      .btn { width: 100%; }
+      .grid,
+      .grid-2,
+      .split,
+      .score-list {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .wrap {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .finding-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
   </style>
 
@@ -327,7 +507,10 @@
       "email": "mailto:toci1111@gmail.com",
       "url": "https://www.linkedin.com/in/ivandimitrijevic/"
     },
-    "brand": { "@type": "Brand", "name": "TrustPress AI" },
+    "brand": {
+      "@type": "Brand",
+      "name": "TrustPress AI"
+    },
     "areaServed": "Worldwide",
     "serviceType": [
       "AI Search Authority Audit",
@@ -341,7 +524,11 @@
       "@type": "Offer",
       "name": "AI Search Authority Audit",
       "priceCurrency": "EUR",
-      "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": "1500" },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": "1500"
+      },
       "availability": "https://schema.org/LimitedAvailability",
       "url": "https://docs.google.com/forms/d/1g8zC9vKFO8E8zDcY51U6NH3B8dQp-M4r3D_wTDiFASY/viewform"
     }
@@ -356,22 +543,42 @@
       {
         "@type": "Question",
         "name": "Is this a free audit?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. The AI Search Authority Audit is a paid diagnostic. The request form is for fit review only. Work starts after payment and source materials are received." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The AI Search Authority Audit is a paid diagnostic. The request form is for fit review only. Work starts after payment and source materials are received."
+        }
       },
       {
         "@type": "Question",
-        "name": "What does the audit review?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The audit reviews positioning clarity, source material depth, proof architecture, buyer-language alignment, offer clarity, website authority structure, LinkedIn trust surface, newsletter or content memory, AI answer quality, authority asset coverage, and conversion path clarity." }
+        "name": "What do I receive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You receive an executive diagnosis, 12-area scorecard, source material gap map, proof architecture review, AI answer-quality notes, LinkedIn trust surface review, priority asset recommendations, a 30-day repair plan, and a 90-day authority roadmap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most audits take 7 to 10 working days after payment and source materials are received."
+        }
       },
       {
         "@type": "Question",
         "name": "When do I upload source materials?",
-        "acceptedAnswer": { "@type": "Answer", "text": "After fit review and payment. The public request form does not collect the full source pack. Paid clients receive a separate source-pack upload form." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After fit review and payment. The public request form does not collect the full source pack. Paid clients receive a separate source-pack upload form."
+        }
       },
       {
         "@type": "Question",
         "name": "Can this guarantee AI search rankings?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No honest audit can guarantee AI search rankings or citations. The audit diagnoses whether your public authority system is clear, structured, source-worthy, proof-backed, and usable by buyers and AI systems." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No honest audit can guarantee AI search rankings or citations. The audit diagnoses whether your public authority system is clear, structured, source-worthy, proof-backed, and usable by buyers and AI systems."
+        }
       }
     ]
   }
@@ -380,21 +587,19 @@
 
 <body>
   <!--
-    CTA FORM NOTE:
-    You supplied a Google Forms edit URL:
-    https://docs.google.com/forms/d/1g8zC9vKFO8E8zDcY51U6NH3B8dQp-M4r3D_wTDiFASY/edit
-
-    Public CTA URL used on this page:
+    Public Google Form URL used on this page:
     https://docs.google.com/forms/d/1g8zC9vKFO8E8zDcY51U6NH3B8dQp-M4r3D_wTDiFASY/viewform
 
-    Test it after publishing. If Google asks visitors to edit/sign in, replace every form href with the public "Send" link from Google Forms.
+    Test in incognito after publishing. If Google asks visitors to edit/sign in,
+    replace every form href with the official public "Send" link from Google Forms.
   -->
   <div class="noise">
     <header class="wrap nav" aria-label="Top navigation">
       <div class="brand">TrustPress AI · Ivan Dimitrijevic</div>
       <nav class="nav-links">
-        <a href="#what-it-checks">What it checks</a>
+        <a href="#symptoms">Symptoms</a>
         <a href="#deliverables">Deliverables</a>
+        <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
         <a href="mailto:toci1111@gmail.com">Contact</a>
       </nav>
@@ -403,9 +608,9 @@
     <main>
       <section class="wrap hero">
         <div class="eyebrow"><span class="dot"></span> AI Search · Buyer Trust · Authority Assets</div>
-        <h1>AI Search Authority Audit</h1>
+        <h1>Find out why buyers and AI systems do not fully trust, cite, or remember you.</h1>
         <p class="hero-sub">
-          Find the <strong>source material, proof, buyer-language, and authority gaps</strong> that stop buyers and AI systems from understanding, verifying, citing, trusting, and remembering you.
+          The <strong>AI Search Authority Audit</strong> is a paid diagnostic for B2B experts, founders, consultants, agencies, and teams with strong expertise but scattered source material, weak proof architecture, unclear positioning, or poor AI-search answer quality.
         </p>
 
         <div class="cta-row">
@@ -413,37 +618,151 @@
           <a class="btn btn-secondary" href="mailto:toci1111@gmail.com?subject=AI%20Search%20Authority%20Audit%20request">Email Ivan</a>
         </div>
 
-        <p class="note">
-          Invoices are sent by email after fit review. Paid clients receive a separate source-pack upload form after payment.
+        <p class="micro-note">
+          You leave with a clear diagnosis of what is trusted, what is missing, what is confusing, and what to build next.
         </p>
 
-        <div class="warning">
-          <strong>This is a paid diagnostic, not a free teardown.</strong><br>
-          Submit the request form first. I review fit based on your website, LinkedIn profile, commercial focus, buyer context, and audit goal. If it looks like a fit, I send payment details and the paid client source-pack upload form. Work starts after payment and source materials are received.
+        <div class="notice">
+          <strong>How the audit starts:</strong> submit the request form first. I review fit. If there is a fit, I send scope and invoice by email. After payment, you receive the source-pack upload form and the audit begins.
         </div>
       </section>
 
-      <section class="wrap">
-        <h2 class="section-title">Most B2B teams do not have a content problem. They have a context problem.</h2>
+      <section class="wrap" id="process">
+        <h2 class="section-title">Simple process. No free source-pack review.</h2>
         <p class="section-lead">
-          Their expertise is scattered across websites, sales calls, decks, LinkedIn posts, newsletters, case studies, proposals, and founder thinking. Buyers cannot easily connect the dots. AI systems cannot reliably explain the company. The result is weak trust, weak recall, and weak shortlisting.
+          The public form is a request for fit review, not the audit itself. Full materials are collected only after payment.
+        </p>
+
+        <div class="process" aria-label="Audit process">
+          <div class="step">
+            <div class="step-num">1</div>
+            <strong>Request</strong>
+            <span>Submit the short paid-audit request form.</span>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <strong>Fit Review</strong>
+            <span>I check the company, offer, buyer, and audit goal.</span>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <strong>Invoice</strong>
+            <span>If it fits, I send scope and invoice by email.</span>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <strong>Source Pack</strong>
+            <span>Paid clients receive the upload form and source checklist.</span>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <strong>Audit</strong>
+            <span>I review buyer trust, proof, source material, LinkedIn, and AI answers.</span>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <strong>Roadmap</strong>
+            <span>You receive the scorecard, gap map, and 30/90-day plan.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" id="symptoms">
+        <h2 class="section-title">You may need this audit if buyers understand you too late.</h2>
+        <p class="section-lead">
+          The audit is designed for companies where the expertise is real, but the public authority system is not doing enough work before the call.
         </p>
 
         <div class="grid">
           <div class="card">
             <span class="number">1</span>
-            <h3>Buyers cannot verify you fast enough.</h3>
-            <p>Your best proof exists, but it is buried, fragmented, or not connected to the claims you make publicly.</p>
+            <h3>AI tools explain you vaguely or incorrectly.</h3>
+            <p>Your public source material is too thin, generic, or disconnected to support accurate AI answers.</p>
           </div>
           <div class="card">
             <span class="number">2</span>
-            <h3>AI systems cannot explain you clearly.</h3>
-            <p>Your public source material is too vague, thin, generic, or disconnected to support accurate AI answers.</p>
+            <h3>Your best proof is buried.</h3>
+            <p>Case studies, results, screenshots, testimonials, and methods exist, but they are not connected to your strongest claims.</p>
           </div>
           <div class="card">
             <span class="number">3</span>
-            <h3>Your authority assets are incomplete.</h3>
-            <p>You may have posts, pages, and articles, but not a structured authority system that creates market memory.</p>
+            <h3>Your website sounds like your competitors.</h3>
+            <p>The copy is polished, but the category, proof, point of view, and buyer decision logic are not sharp enough.</p>
+          </div>
+          <div class="card">
+            <span class="number">4</span>
+            <h3>Your LinkedIn is stronger than your website.</h3>
+            <p>The founder or team has better explanations in posts and comments than the official pages buyers and AI systems can reference.</p>
+          </div>
+          <div class="card">
+            <span class="number">5</span>
+            <h3>Your newsletter builds attention, not memory.</h3>
+            <p>The content may be smart, but it does not compound into a clear authority system or repeatable market narrative.</p>
+          </div>
+          <div class="card">
+            <span class="number">6</span>
+            <h3>Buyers only get it after a call.</h3>
+            <p>If the sales call is doing all the trust work, your public context infrastructure is underbuilt.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" id="deliverables">
+        <h2 class="section-title">What you receive</h2>
+        <p class="section-lead">
+          The output is not a pile of generic recommendations. It is a practical authority diagnosis and repair plan.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Executive diagnosis</h3>
+            <p>A blunt summary of what is working, what is confusing, what is missing, and what is commercially dangerous.</p>
+          </div>
+          <div class="card">
+            <h3>12-area scorecard</h3>
+            <p>A structured view of positioning, source material, proof, buyer language, LinkedIn, AI answer quality, and conversion path.</p>
+          </div>
+          <div class="card">
+            <h3>Gap map</h3>
+            <p>Source material gaps, proof gaps, positioning gaps, AI answer-quality risks, and LinkedIn trust-surface leaks.</p>
+          </div>
+          <div class="card">
+            <h3>Priority asset map</h3>
+            <p>What should be built next: source page, proof page, service page, report, comparison asset, FAQ, or authority hub.</p>
+          </div>
+          <div class="card">
+            <h3>30-day repair plan</h3>
+            <p>The fast fixes that make the public authority system clearer, more trustworthy, and easier to understand.</p>
+          </div>
+          <div class="card">
+            <h3>90-day authority roadmap</h3>
+            <p>A practical path for building stronger context infrastructure and market memory over time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <h2 class="section-title">Sample audit finding</h2>
+        <p class="section-lead">
+          The audit turns vague trust problems into specific fixes.
+        </p>
+
+        <div class="finding">
+          <div class="finding-row">
+            <div class="finding-label">Claim</div>
+            <div class="finding-text">“We help B2B teams become AI-search ready.”</div>
+          </div>
+          <div class="finding-row">
+            <div class="finding-label">Gap</div>
+            <div class="finding-text">The website has no source page explaining the methodology, no proof page showing evidence, and no comparison page clarifying alternatives.</div>
+          </div>
+          <div class="finding-row">
+            <div class="finding-label">Risk</div>
+            <div class="finding-text">Buyers and AI systems can repeat the claim, but cannot verify it, cite it confidently, or understand why this company should be shortlisted.</div>
+          </div>
+          <div class="finding-row">
+            <div class="finding-label">Fix</div>
+            <div class="finding-text">Build a methodology source page, proof architecture page, and buyer-language FAQ before scaling more posts or articles.</div>
           </div>
         </div>
       </section>
@@ -479,7 +798,7 @@
       <section class="wrap">
         <h2 class="section-title">The methodology</h2>
         <p class="section-lead">
-          The audit is powered by the Context Infrastructure methodology: the layer of source material, proof, structure, and buyer language that makes expertise usable by people and machines.
+          The audit is powered by Context Infrastructure: the layer of source material, proof, structure, and buyer language that makes expertise usable by people and machines.
         </p>
 
         <div class="grid-2">
@@ -502,35 +821,11 @@
         </div>
       </section>
 
-      <section class="wrap" id="deliverables">
-        <h2 class="section-title">What you receive</h2>
-        <p class="section-lead">
-          The output is not a pile of generic recommendations. It is a practical authority diagnosis and repair plan.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Scorecard</h3>
-            <p>A 12-area AI Search Authority scorecard showing what is clear, weak, missing, or commercially dangerous.</p>
-          </div>
-          <div class="card">
-            <h3>Gap map</h3>
-            <p>Source material gaps, proof gaps, positioning gaps, AI answer-quality risks, and LinkedIn trust-surface leaks.</p>
-          </div>
-          <div class="card">
-            <h3>Roadmap</h3>
-            <p>A 30-day repair plan and 90-day authority roadmap showing what to fix, publish, structure, or build next.</p>
-          </div>
-        </div>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/1g8zC9vKFO8E8zDcY51U6NH3B8dQp-M4r3D_wTDiFASY/viewform" target="_blank" rel="noopener">Request a Paid Audit</a>
-        </div>
-      </section>
-
       <section class="wrap">
         <h2 class="section-title">Who this is for</h2>
-        <p class="section-lead">This is for teams with real expertise, but weak context infrastructure.</p>
+        <p class="section-lead">
+          This is for teams with real expertise, but weak context infrastructure.
+        </p>
 
         <div class="grid-2">
           <div class="panel">
@@ -559,20 +854,20 @@
       <section class="wrap" id="pricing">
         <div class="split">
           <div>
-            <h2 class="section-title">Pricing and process</h2>
+            <h2 class="section-title">Pricing and scope</h2>
             <p class="section-lead">
-              The audit starts after fit review, payment, and source materials. Invoices are sent by email.
+              Invoices are sent by email after fit review. The audit starts after payment and source materials.
             </p>
           </div>
           <div class="panel">
             <span class="pill">Paid diagnostic</span>
             <div class="price">From €1,500 <small>starter audit</small></div>
             <p class="muted">
-              Full AI Search Authority Audits usually start from €2,500 depending on scope, source volume, and number of public surfaces reviewed.
+              Full AI Search Authority Audits usually start from €2,500 depending on scope, source volume, number of public surfaces reviewed, and depth of AI-search testing.
             </p>
             <ul>
               <li>Fit review from the request form</li>
-              <li>Invoice sent by email</li>
+              <li>Scope and invoice sent by email</li>
               <li>Source-pack upload form after payment</li>
               <li>7–10 working day audit window after materials are received</li>
               <li>Delivery with scorecard, gap map, and roadmap</li>
@@ -591,25 +886,56 @@
         </p>
 
         <div class="grid">
-          <div class="card"><h3>Audit</h3><p>Find the gaps in clarity, proof, source material, AI answer quality, and conversion path.</p></div>
-          <div class="card"><h3>Sprint</h3><p>Build the highest-priority authority asset: source page, proof page, service page, report, or comparison asset.</p></div>
-          <div class="card"><h3>Operations</h3><p>Maintain the authority system across LinkedIn, newsletter, website, proof library, and market-memory assets.</p></div>
+          <div class="card">
+            <h3>Audit</h3>
+            <p>Find the gaps in clarity, proof, source material, AI answer quality, and conversion path.</p>
+          </div>
+          <div class="card">
+            <h3>Sprint</h3>
+            <p>Build the highest-priority authority asset: source page, proof page, service page, report, or comparison asset.</p>
+          </div>
+          <div class="card">
+            <h3>Operations</h3>
+            <p>Maintain the authority system across LinkedIn, newsletter, website, proof library, and market-memory assets.</p>
+          </div>
         </div>
       </section>
 
       <section class="wrap">
         <h2 class="section-title">FAQ</h2>
-        <details><summary>Is this a free audit?</summary><p>No. The request form is only for fit review. The audit is a paid diagnostic. Work starts after payment and source materials are received.</p></details>
-        <details><summary>Why not upload everything immediately?</summary><p>Because the public form should qualify serious buyers, not collect unpaid source packs. Paid clients receive a separate source-pack upload form after payment.</p></details>
-        <details><summary>Can you guarantee AI search rankings?</summary><p>No. The honest goal is to make your authority system clearer, more structured, more source-worthy, more proof-backed, and more usable by buyers and AI systems.</p></details>
-        <details><summary>What do I need before requesting an audit?</summary><p>At minimum: your website, LinkedIn profile, main offer or service, target buyer, competitors or alternatives, and a clear problem you want to be trusted for.</p></details>
+
+        <details>
+          <summary>Is this a free audit?</summary>
+          <p>No. The request form is only for fit review. The audit is a paid diagnostic. Work starts after payment and source materials are received.</p>
+        </details>
+
+        <details>
+          <summary>What do I receive?</summary>
+          <p>You receive an executive diagnosis, 12-area scorecard, source material gap map, proof architecture review, AI answer-quality notes, LinkedIn trust surface review, priority asset recommendations, a 30-day repair plan, and a 90-day authority roadmap.</p>
+        </details>
+
+        <details>
+          <summary>How long does it take?</summary>
+          <p>Most audits take 7–10 working days after payment and source materials are received.</p>
+        </details>
+
+        <details>
+          <summary>Why not upload everything immediately?</summary>
+          <p>Because the public form should qualify serious buyers, not collect unpaid source packs. Paid clients receive a separate source-pack upload form after payment.</p>
+        </details>
+
+        <details>
+          <summary>Can you guarantee AI search rankings?</summary>
+          <p>No. The honest goal is to make your authority system clearer, more structured, more source-worthy, more proof-backed, and more usable by buyers and AI systems.</p>
+        </details>
       </section>
 
       <section class="wrap">
         <div class="panel">
+          <span class="pill">Start here</span>
           <h2 class="section-title">Request a paid audit</h2>
           <p class="section-lead">
-            Send your website, LinkedIn profile, commercial focus, buyer context, and audit goal. If it looks like a fit, I will send payment details and the paid client source-pack upload form.
+            Send your website, LinkedIn profile, commercial focus, buyer context, and audit goal. If it looks like a fit, I will send scope, payment details, and the paid client source-pack upload form.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://docs.google.com/forms/d/1g8zC9vKFO8E8zDcY51U6NH3B8dQp-M4r3D_wTDiFASY/viewform" target="_blank" rel="noopener">Request a Paid Audit</a>
@@ -623,7 +949,7 @@
       <div class="footer-grid">
         <div>
           <strong>TrustPress AI</strong><br>
-          AI-search-ready authority systems for B2B experts, founders, consultants, agencies, and teams.
+          Authority assets, context infrastructure, proof architecture, LinkedIn trust surfaces, and AI-search-ready source material for B2B experts and teams.
         </div>
         <div>
           Contact: <a href="mailto:toci1111@gmail.com">toci1111@gmail.com</a><br>
