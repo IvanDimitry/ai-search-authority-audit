@@ -1,1 +1,1 @@
-# ai-search-authority-audit-
+# ai-search-authority-audit
